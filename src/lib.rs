@@ -42,6 +42,14 @@ impl IpNetwork {
             IpNetwork::V6(ref a) => a.prefix(),
         }
     }
+
+    pub fn is_v4(&self) -> bool {
+        self.ip().is_ipv4()
+    }
+
+    pub fn is_v6(&self) -> bool {
+        self.ip().is_ipv6()
+    }
 }
 
 /// Converts a `IpAddr` network mask into a prefix.
